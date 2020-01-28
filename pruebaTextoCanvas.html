@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+<style>
+#lienzo {
+	border: 1px solid #00F;
+}
+section {
+	width: 800px;
+	position: relative;
+	margin: auto;
+}
+</style>
+<script>
+
+function comenzar(){
+	var elemento = document.getElementById("lienzo");
+	lienzo=elemento.getContext("2d");
+	lienzo.shadowColor="rgba(0,0,0,0.5)";
+	lienzo.shadowOffsetX=4;	
+	lienzo.shadowOffsetY=4;
+	lienzo.shadowBlur=5;
+	lienzo.font="bold 48px verdana";
+	lienzo.textAlign="start";
+	lienzo.textBaseline="top";
+	lienzo.fillText("Hola alumnos",100,100);
+	var dimensiones = lienzo.measureText("hola alumnos");
+	//lienzo.strokeRect(100,100,dimensiones.width+10,58);
+	
+	
+}
+
+
+window.addEventListener("load",comenzar,false);
+</script>
+
+</head>
+
+<body>
+<section>
+  <canvas width="800" height="600" id="lienzo"> su navegador no admite el elemento canvas </canvas>
+</section>
+</body>
+</html>

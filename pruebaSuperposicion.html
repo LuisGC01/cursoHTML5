@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+<style>
+#lienzo {
+	border: 1px solid #069;
+}
+</style>
+<script>
+function comenzar(){
+	var elemento=document.getElementById("lienzo");
+	lienzo=elemento.getContext("2d");
+	/*lienzo.fillStyle="#880000";
+	lienzo.fillRect(400,250,300,100);
+	lienzo.globalCompositeOperation="source-out";
+	lienzo.fillStyle="#AAAAFF";
+	lienzo.font="bold 80px verdana";
+	lienzo.textAlign="center";
+	lienzo.textBaseline="middle";
+	lienzo.fillText("hola alumnos",550,300);
+	var imagen=new Image();
+	imagen.src="http://www.pildorasinformaticas.com/archivos/logos/html5online.jpg";
+	imagen.addEventListener("load",function(){
+		lienzo.drawImage(imagen,50,10,75,75,0,0,300,300)},false);*/
+	var imagen=new Image();
+	imagen.src="ejercicio1/imagenes/1.jpg";
+	imagen.addEventListener("load",manipularImagen,false);
+	
+	
+}
+
+function manipularImagen(e){
+	imagen=e.target;
+	lienzo.drawImage(imagen,0,0);
+	var infoImagen=lienzo.getImageData(0,0,200,200);
+	var posicion;
+	for(var x=0; x<=200;x++){
+		for(y=0;y<=200;y++){
+			posicion=(infoImagen.width*4*y)+(x*4);
+			infoImagen.data[posicion]=255-infoImagen.data[posicion];
+			infoImagen.data[posicion+1]=255-infoImagen.data[posicion+1];
+			infoImagen.data[posicion+2]=255-infoImagen.data[posicion+2];
+		}
+	}
+	lienzo.putImageData(infoImagen,300,250);
+}
+window.addEventListener("load",comenzar,false);
+</script>
+</head>
+
+<body>
+<section>
+  <canvas width="1200" height="900" id="lienzo"> su navegador no soporta canvas </canvas>
+</section>
+</body>
+</html>

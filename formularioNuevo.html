@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Documento sin título</title>
+</head>
+
+<style>
+
+table{
+	text-align:center;
+	background-color:#F63;
+	width:25%;
+	margin:auto;
+	border:2px #0C9 dashed;
+}
+
+td{
+	padding:15px;
+}
+
+</style>
+
+<script>
+var edad;
+
+function comenzar(){
+	edad=document.getElementById("miEdad");
+	edad.addEventListener("change",cambiaRango,false);
+	document.datosUsuario.addEventListener("invalid",validar,true);
+	document.getElementById("enviar").addEventListener("click",enviar,false);
+	document.datosUsuario.addEventListener("input",validarTiempoReal,false);
+}
+
+function cambiaRango(){
+	var salida=document.getElementById("rango");
+	var calculo=edad.value-30;
+	if(calculo<30){
+		calculo=0;
+		edad.value=30;
+	}
+	salida.innerHTML=calculo+" a "+edad.value;
+}
+
+function validar(e){
+	var elemento=e.target;
+	elemento.style.background="#FFDDDD";
+}
+
+function enviar(){
+	var cuadroUsuario = document.getElementById("usuario");
+	var correcto= document.datosUsuario.checkValidity();
+	if(correcto == true){
+		document.datosUsuario.submit();
+	}else if(cuadroUsuario.validity.valueMissing==true || cuadroUsuario.validity.patternMismatch==true){
+		alert("El usuario no puede esta vacio o debe tener 3 letras");
+	}
+}
+
+function validarTiempoReal(e){
+	var elemento=e.target;
+	if(elemento.validity.valid==true){
+		elemento.style.background="#FFFFFF";
+	}else{
+		elemento.style.background="#FFDDDD";
+	}
+}
+
+window.addEventListener("load",comenzar,false);
+</script>
+
+<body>
+
+<section>
+
+<form name="datosUsuario" method="get">
+
+<table><tr><td>
+Usuarios:</td><td><input pattern="[A-Za-z]{3}" name="usuario" id="usuario" maxlength="10" required></td></tr>
+<tr><td>
+Email:</td><td><input type="email" name="miEmail" id="miEmail" required></td></tr>
+<tr><td>
+Edad:</td><td><input type="range" name="miEdad" id="miEdad" min="0" max="120" step="30" value="30"></td></tr>
+<tr><td>
+<output id="rango"> 0 a 30</output>
+</td></tr>
+<tr><td>
+<input type="submit" id="enviar" value="Registrar"></td></tr>
+</table>
+</form>
+
+</section>
+
+
+</body>
+</html>

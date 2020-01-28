@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+<style>
+#lienzo {
+	border: 1px solid #0F6;
+}
+</style>
+<script>
+var y=300;
+var estado="bajando";
+var arriba=y;
+var horizontal = 0;
+function comenzar(){
+	var elemento=document.getElementById("lienzo");
+	lienzo=elemento.getContext("2d");
+	window.addEventListener("mousemove",animacion,false);
+}
+
+function animacion(e){
+	lienzo.clearRect(0,0,1200,900);
+	var xDelRaton=e.clientX;
+	var yDelRaton=e.clientY;
+	var xCentro=550;
+	var yCentro=325;
+	var angulo=Math.atan2(xDelRaton-xCentro,yDelRaton-yCentro);
+	var x=xCentro+Math.round(Math.sin(angulo)*10);
+	var y=yCentro+Math.round(Math.cos(angulo)*10);
+	lienzo.beginPath();
+	lienzo.arc(xCentro,yCentro,20,0,Math.PI*2,false);
+	lienzo.moveTo(620,325);
+	lienzo.arc(600,yCentro,20,0,Math.PI*2,false);
+	lienzo.stroke();
+	lienzo.beginPath();
+	lienzo.arc(x,y,10,0,Math.PI*2,false);
+	lienzo.moveTo(x,y);
+	lienzo.arc(x+50,y,10,0,Math.PI*2,false);
+	lienzo.fill();
+}
+
+window.addEventListener("load",comenzar,false);
+</script>
+</head>
+
+<body>
+<section>
+  <canvas width="1200" height="900" id="lienzo"> su navegador no soporta canvas </canvas>
+</section>
+</body>
+</html>

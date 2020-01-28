@@ -1,0 +1,30 @@
+Comandos basicos de git
+
+configuracion de git
+
+git config --list 
+sirve para ver las configuraciones del cliente git
+
+git config --global user.name "nombreUsuarioGitHub"
+git config --global user.email "emailAsociadoAlUsuario"
+sirven para configurar la cuenta de usuario del cliente git
+
+trabajo en el repositorio
+
+git clone <url del repositorio>
+sirve para "clonar el repositorio donde se trabajara"
+
+git pull
+sirve para actualizar a la ultima version el trabajo actualizar
+
+git status
+sirve para ver el estado de todos los archivos que no coinciden con el registrado en el repositorio
+
+git add .
+sirve para agregar todos los archivos que no coinciden con el registrado en el repositorio
+
+git commit -m "mensaje"
+sirve principalmente para describir las modificaciones realizadas
+
+git push
+sirve para subir la version actual al cliente git

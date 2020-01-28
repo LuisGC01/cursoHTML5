@@ -1,0 +1,37 @@
+@charset "utf-8";
+/* CSS Document */
+
+#video{
+	width:720px;
+	margin:20px auto;
+	background:#999;
+	padding:5px;
+	border:2px solid #f00;
+	-webkit-border-radius:5px;
+}
+
+nav{
+	margin:5px 0;
+}
+
+#botones{
+	float:left;
+	width:100px;
+	height:20px;
+}
+
+#barra{
+	background:#FFF;
+	width:600px;
+	height:15px;
+	border:1px solid #0F0;
+	padding:3px;
+	margin-left:60px;
+}
+
+#progreso{
+	position:absolute;
+	width:0px;
+	height:15px;
+	background:rgba(0,0,150,3);
+}

@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+<style>
+#lienzo {
+	border: 1px solid #309;
+}
+</style>
+<script>
+function comenzar(){
+	var elemento = document.getElementById("lienzo");
+	lienzo=elemento.getContext("2d");
+	/*lienzo.font="bold 20px verdana";
+	lienzo.fillText("hola alumnos",50,50);
+	lienzo.translate(100,100);
+	lienzo.scale(3,3);
+	lienzo.rotate(Math.PI);
+	lienzo.fillText("hola alumnos",-200,-150);*/
+/*	lienzo.transform(3,0,0,1,0,0);
+	lienzo.font="bold 20px verdana";
+	lienzo.fillText("hola alumnos",50,50);
+	lienzo.setTransform(1,0,0,10,0,0);
+	lienzo.font="bold 20px verdana";
+	lienzo.fillText("hola alumnos",50,50);*/	
+	lienzo.font="bold 20px verdana";
+	lienzo.save();
+	lienzo.fillText("hola alumnos",50,50);
+	lienzo.translate(60,70);
+	lienzo.rotate(Math.PI/180*55);
+	lienzo.fillText("hola alumnos",0,0);
+	//lienzo.rotate(-Math.PI/180*55);
+	lienzo.restore();
+	lienzo.translate(300,400);
+	lienzo.scale(2,2);
+	lienzo.fillText("hola alumnos",0,0);
+		
+}
+window.addEventListener("load",comenzar,false);
+</script>
+</head>
+
+<body>
+<section>
+  <canvas width="1200" height="900" id="lienzo"> su navegador no soporta canvas </canvas>
+</section>
+</body>
+</html>

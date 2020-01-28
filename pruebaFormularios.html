@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Documento sin título</title>
+</head>
+<body>
+
+<section>
+<form name="miFormulario" id="miFormulario" method="get" autocomplete="on">
+Email:&nbsp;<input type="email" name="email" id="email" required multiple><br><br>
+Buscar:&nbsp;<input type="search" name="buscar" id="buscar"><br><br>
+url:&nbsp;<input type="url" name="url" id="url" autofocus><br><br>
+edad:&nbsp;<input type="range" name="edad" id="edad" min="0" max="100" step="5" placeholder="multiplos de 5"><br><br>
+fecha:&nbsp;<input type="time" name="fecha" id="fecha"><br><br>
+c. postal:&nbsp;<input pattern="[0-9]{5}" name="cpostal" id="cpostal" placeholder="5 digitos"><br><br>
+<input type="submit" value="Enviar">
+</form>
+</section>
+
+<img src="ejercicio1/imagenes/1.jpg" width="200" height="200">
+<br><br>
+nombre:&nbsp;<input type="text" name="nombre" id="nombre" form="miFormulario">
+</body>
+</html>

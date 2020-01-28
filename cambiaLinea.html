@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+<style>
+#lienzo {
+	border: 1px solid #00F;
+}
+section {
+	width: 800px;
+	position: relative;
+	margin: auto;
+}
+</style>
+<script>
+
+function comenzar(){
+	var elemento = document.getElementById("lienzo");
+	lienzo=elemento.getContext("2d");
+	lienzo.arc(200,150,100,0,Math.PI*2,false);
+	lienzo.stroke();
+	lienzo.lineWidth=10;
+	lienzo.lineCap="round";
+	lienzo.beginPath();
+	lienzo.arc(200,170,60,0,Math.PI,false);
+	lienzo.stroke();
+	lienzo.lineWidth=5;
+	lienzo.lineJoin="miter";
+	lienzo.miterLimit=2;
+	lienzo.beginPath();
+	lienzo.moveTo(195,135);
+	lienzo.lineTo(215,155);
+	lienzo.lineTo(195,155);
+	lienzo.stroke();
+	lienzo.lineWidth=1;
+	lienzo.beginPath();
+	lienzo.arc(175,110,7,0,Math.PI*2,false);
+ 	lienzo.arc(225,110,7,0,Math.PI*2,false);
+	lienzo.fill();
+	lienzo.beginPath();
+	lienzo.arc(168,106,15,0,Math.PI*2,false);
+	lienzo.stroke();
+	lienzo.beginPath();
+	lienzo.arc(232,106,15,0,Math.PI*2,false);
+	lienzo.stroke();
+	
+	
+}
+
+window.addEventListener("load",comenzar,false);
+</script>
+</head>
+
+<body>
+<section>
+  <canvas width="800" height="600" id="lienzo"> su navegador no soporta canvas </canvas>
+</section>
+</body>
+</html>

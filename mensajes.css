@@ -1,0 +1,24 @@
+@charset "utf-8";
+/* CSS Document */
+
+#zonaFormulario{
+	margin-left:100px;
+	padding:20px;
+	border:none;
+}
+
+#zonaDatos{
+	float:left;
+	width:500px;
+	margin:20px 20px;
+	padding:20px;
+	border:2px dotted #FF00FF; 
+}
+
+#zonaRecepcion{
+	width:500px;
+	height:350px;
+	margin:50px 700px;
+	padding:20px;
+	border:2px dotted #330099;
+}
